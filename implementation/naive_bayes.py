@@ -78,7 +78,7 @@ if __name__ == "__main__":
     np.random.seed(42)
     
     #reading and splitting test and train
-    data=pd.read_csv("data/Thoughts.docx.csv",sep=',')
+    data=pd.read_csv("dataset/Thoughts.docx.csv",sep=',')
     tr=data[data["TrainData"]==1]
     te=data[data["TrainData"]==0]
     train=tr[["RightHippoVol","LeftHippoVol","Dementia"]]
