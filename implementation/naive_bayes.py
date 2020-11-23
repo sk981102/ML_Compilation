@@ -9,8 +9,8 @@ from sklearn.metrics import accuracy_score
 # NAIVE BAYES algorithm implementation to predict Dementia based on 2 features: RightHippoVol and LeftHippoVol 
 
 def calc_prob(x, mean, std):
-	exponent = np.exp(-((x-np.mean)**2 / (2 * np.std**2 )))
-	return (1 / (np.sqrt(2 * pi) * np.std)) * exponent
+	exponent = np.exp(-1*((x-mean)**2 / (2 * std**2 )))
+	return (1 / (np.sqrt(2 * pi) * std)) * exponent
 
 
 def summarize(train):
@@ -73,6 +73,7 @@ def naive_predict(data,summary):
 
 def accuracy(data,predictions):
     return np.mean(data["Dementia"]==predictions)
+
 
 if __name__ == "__main__":
     np.random.seed(42)
